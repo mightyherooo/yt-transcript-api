@@ -1,7 +1,11 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 from youtube_transcript_api import YouTubeTranscriptApi, NoTranscriptFound
 
 app = Flask(__name__)
+
+# ✅ Allow only your frontend URL
+CORS(app, origins=["https://youtubescribe.pages.dev"])
 
 @app.route("/")
 def home():

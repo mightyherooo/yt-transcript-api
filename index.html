@@ -18,7 +18,7 @@
         return;
       }
       try {
-        const res = await fetch(`/transcript/${id}`);
+        const res = await fetch(`https://yt-transcript-api-jrbq.onrender.com/transcript/${id}`);
         const data = await res.json();
         if (data.error) {
           document.getElementById("output").textContent = "Error: " + data.error;
